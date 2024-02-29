@@ -1,6 +1,5 @@
 $changes = @{
     "com.example" = "net.runelite.client.plugins.ethan"
-    "net.runelite.client.plugins.devtools" = "net.runelite.client.plugins.xo.devtools"
     'name = "EthanApiPlugin",' = 'name = "<html><font color=#42f551>[Ethan]</font> EthanApiPlugin</html>",'
     'name = "Packet Utils",' = 'name = "<html><font color=#42f551>[Ethan]</font> Packet Utils</html>",'
 }
