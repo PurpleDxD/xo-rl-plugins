@@ -12,10 +12,7 @@
     <artifactId>installer</artifactId>
 
     <properties>
-        <commons.io.version>2.15.0</commons.io.version>
-        <json.version>20231013</json.version>
-
-        <copy.dir>Copy DIR</copy.dir>
+        <copy.dir>C:\Users\xxxx\Desktop</copy.dir>
     </properties>
 
     <dependencies>
@@ -32,12 +29,10 @@
         <dependency>
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
-            <version>${commons.io.version}</version>
         </dependency>
         <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>
-            <version>${json.version}</version>
         </dependency>
     </dependencies>
 

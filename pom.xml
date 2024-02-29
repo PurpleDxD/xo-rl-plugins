@@ -23,6 +23,13 @@
 
         <runelite.version>1.10.24-SNAPSHOT</runelite.version>
         <lombok.version>1.18.22</lombok.version>
+
+        <reactivex.version>3.1.8</reactivex.version>
+        <reactive.streams.version>1.0.4</reactive.streams.version>
+        <cfr.version>0.152</cfr.version>
+        <roaringbitmap.version>1.0.0</roaringbitmap.version>
+        <commons.io.version>2.15.0</commons.io.version>
+        <json.version>20231013</json.version>
     </properties>
 
     <dependencyManagement>
@@ -37,6 +44,36 @@
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
                 <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>io.reactivex.rxjava3</groupId>
+                <artifactId>rxjava</artifactId>
+                <version>${reactivex.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.reactivestreams</groupId>
+                <artifactId>reactive-streams</artifactId>
+                <version>${reactive.streams.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.benf</groupId>
+                <artifactId>cfr</artifactId>
+                <version>${cfr.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.roaringbitmap</groupId>
+                <artifactId>RoaringBitmap</artifactId>
+                <version>${roaringbitmap.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons.io.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.json</groupId>
+                <artifactId>json</artifactId>
+                <version>${json.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
