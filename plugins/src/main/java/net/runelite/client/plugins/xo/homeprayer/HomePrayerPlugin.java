@@ -148,6 +148,8 @@ public class HomePrayerPlugin extends Plugin {
     private void useNotedBonesOnPhials() {
         if (shouldSkip()) return;
 
+        validatePrerequisites();
+
         NPCs
                 .search()
                 .withName("Phials")
@@ -196,8 +198,6 @@ public class HomePrayerPlugin extends Plugin {
     }
 
     private State getState() {
-        validatePrerequisites();
-
         if (isOutsideHouse() && isDialogOpen()) {
             return updateState(State.HANDLING_DIALOG, 0);
         }
