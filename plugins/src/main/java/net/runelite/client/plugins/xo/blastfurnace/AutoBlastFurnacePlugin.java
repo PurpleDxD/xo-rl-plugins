@@ -58,7 +58,7 @@ public class AutoBlastFurnacePlugin extends Plugin {
 
     @Override
     protected void startUp() {
-        state = State.OPEN_BANK;
+        state = State.NONE;
         running = false;
         useGauntlets = true;
         useGloves = true;
@@ -96,7 +96,7 @@ public class AutoBlastFurnacePlugin extends Plugin {
     @Subscribe
     public void onGameStateChanged(GameStateChanged event)
     {
-        if (event.getGameState() == GameState.LOADING)
+        if (GameState.LOADING.equals(event.getGameState()))
         {
             conveyorBelt = null;
             furnace = null;
@@ -106,7 +106,11 @@ public class AutoBlastFurnacePlugin extends Plugin {
     @Subscribe
     void onGameTick(GameTick event) {
         if (!running) return;
-        if (timeout-- > 0) return;
+
+        if (timeout > 0) {
+            timeout--;
+            return;
+        }
 
         getState();
 
@@ -152,8 +156,7 @@ public class AutoBlastFurnacePlugin extends Plugin {
                 break;
             case NONE:
             default:
-                chatMessage(String.format("Bad state: %s", state.name()), Color.red);
-                running = false;
+                stopPlugin(String.format("Bad state: %s", state.name()));
                 break;
         }
     }
@@ -412,6 +415,7 @@ public class AutoBlastFurnacePlugin extends Plugin {
     }
 
     private void stopPlugin(String message) {
+        running = false;
         chatMessage(message, Color.RED);
         EthanApiPlugin.stopPlugin(this);
     }
