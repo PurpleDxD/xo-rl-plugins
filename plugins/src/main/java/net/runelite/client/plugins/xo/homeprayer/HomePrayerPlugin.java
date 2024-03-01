@@ -104,6 +104,8 @@ public class HomePrayerPlugin extends Plugin {
                 useBoneOnAltar();
                 break;
             case NONE:
+                chatMessage("No state identified, trying again.", Color.ORANGE);
+                break;
             default:
                 stopPlugin(String.format("Bad state: %s", state.name()));
                 break;
@@ -137,7 +139,7 @@ public class HomePrayerPlugin extends Plugin {
 
         TileObjects
                 .search()
-                .nameContains("Pool")
+                .nameContains("pool")
                 .withAction("Drink")
                 .nearestToPlayer()
                 .ifPresent(pool -> TileObjectInteraction.interact(pool, "Drink"));
@@ -254,7 +256,7 @@ public class HomePrayerPlugin extends Plugin {
     }
 
     public boolean poolIsPresent() {
-        return TileObjects.search().nameContains("Pool").withAction("Drink").nearestToPlayer().isPresent();
+        return TileObjects.search().nameContains("pool").withAction("Drink").nearestToPlayer().isPresent();
     }
 
     public boolean isInInstance() {
